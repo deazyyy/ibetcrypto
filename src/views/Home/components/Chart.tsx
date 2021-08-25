@@ -78,7 +78,9 @@ const Chart: React.FC = () => {
 
  }, [])
   return (
-    <div class="tradingview-widget-container">
+    <div class="tradingview-widget-container wow fadeInDown"
+    data-wow-duration="0.6s"
+    data-wow-delay="0.4s">
       <div id="tradingview_f2122"></div>
     </div>
   );

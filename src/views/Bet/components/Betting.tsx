@@ -2,10 +2,10 @@ import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 
 const Betting: React.FC = () => {
-  const [activenm, setActivenm] = useState("btn1");
-  function isActive(name: String) {
-    return activenm == name;
-  }
+  const [activenm, setActivenm] = useState("10");
+    function isActive(name: String) {
+      return activenm == name;
+    }
 
   return (
     <BetDiv className="wow fadeInDown" data-wow-duration="0.5s" data-wow-delay="0.8s">
@@ -53,10 +53,10 @@ const Betting: React.FC = () => {
         </div>
         <div className="iptoptions">
           <div className="row">
-            <button>10</button>
-            <button>10</button>
-            <button>10</button>
-            <button>10</button>
+            <button className={isActive("10") ? "active" : ``} onClick={() => setActivenm("10")}>10</button>
+            <button className={isActive("20") ? "active" : ``} onClick={() => setActivenm("20")}>20</button>
+            <button className={isActive("50") ? "active" : ``} onClick={() => setActivenm("50")}>50</button>
+            <button className={isActive("75") ? "active" : ``} onClick={() => setActivenm("75")}>75</button>
           </div>
           <button className="maxbtn">Max</button>
         </div>
@@ -129,6 +129,9 @@ const BetDiv = styled.div`
           width:calc(25% - 10px);
           padding: 7px;
           border-radius:7px;
+          &.active{
+              background: rgba(89, 89, 89, 0.7);
+          }
         }
       }
       .maxbtn{

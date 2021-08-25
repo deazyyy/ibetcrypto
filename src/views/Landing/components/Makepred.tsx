@@ -147,6 +147,18 @@ const Div = styled.div`
         }
     }
 
+    @media screen and (min-width:2100px){
+        .right .main{
+            padding:10px 100px 60px
+        }
+        .namebx{
+            img{
+                width:200px !important
+            }
+        }
+      }
+
+
     @media screen and (max-width:1300px){
       h1{
           font-size:30px

@@ -107,12 +107,37 @@ const Dashboard: React.FC = () => {
           </div>
         </div>
       </header>
-      <Row status="active" />
-      <Row colorvalue="green" />
-      <Row />
-      <Row />
-      <Row />
-      <Row />
+      <div style={{display:isActive("ic1")?"block":"none"}}>
+        <Row status="active" />
+        <Row colorvalue="green" />
+        <Row />
+        <Row />
+        <Row />
+        <Row />
+      </div>
+      <div style={{display:isActive("ic2")?"block":"none"}}>
+        <Row status="active" />
+        <Row colorvalue="green" />
+        <Row />
+      </div>
+      <div style={{display:isActive("ic3")?"block":"none"}}>
+        <Row />
+        <Row />
+        <Row />
+      </div>
+      <div style={{display:isActive("ic4")?"block":"none"}}>
+        <Row status="active" />
+        <Row />
+        <Row />
+      </div>
+      <div style={{display:isActive("all")?"block":"none"}}>
+        <Row status="active" />
+        <Row colorvalue="green" />
+        <Row />
+        <Row />
+        <Row />
+        <Row />
+      </div>
     </DashDiv>
   );
 };

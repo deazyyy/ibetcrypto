@@ -15,7 +15,7 @@ interface CardValueProps {
 const CardLive:  React.FC<CardValueProps> = ({colorvalue, status ,comp})=> {
 
   return (
-    <CardDiv className={`${colorvalue} ${status} ${comp} mycard wow fadeInDown`} data-wow-duration="0.9s" data-wow-delay="0.8s">
+    <CardDiv className={`${colorvalue} ${status} ${comp} mycard `} >
         <header>
             <div>
                 {status== "active"? <LiveIcon/>:<Locked/>}
