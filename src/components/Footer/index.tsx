@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
   const Close = () => setClick(false);
 
   return (
-    <Nav>
+    <Nav className="wow fadeInUp" data-wow-duration="0.7s" data-wow-delay="0.5s">
         <div className="social">
               <i class="fab fa-facebook-f"></i>
               <i class="fas fa-envelope"></i>

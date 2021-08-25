@@ -28,7 +28,7 @@ const [shown, setShown] = useState(false)
     <HomeDiv >
         <MakePred/>
         <Pred/>
-        <div className="container">
+        <div className="container wow fadeInDown" data-wow-duration="0.5s" data-wow-delay="0.4s">
           <Matches/>
         </div>
         <Partners/>

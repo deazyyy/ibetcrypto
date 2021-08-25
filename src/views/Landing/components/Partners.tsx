@@ -5,7 +5,7 @@ import CardNext from '../../../components/Cards/Cardnext'
   
 const Partners:  React.FC = ()=> {
   return (
-    <Div>
+    <Div className="wow fadeInDown" data-wow-duration="0.9s" data-wow-delay="0.4s">
     <div className="container">
         <h3>Our Partners</h3>
         <div className="imgOuter">

@@ -5,12 +5,60 @@ import CardNext from '../../components/Cards/Cardnext'
 import CardLater from '../../components/Cards/Cardlater'
 import Info from "../../assets/Icons/Info";
 import Replay from "../../assets/Icons/Replay";
+import Chart from './components/Chart'
+
+
+
+const Home: React.FC = () => {
+const [shown, setShown] = useState(false)
+  return (
+    <HomeDiv className="container">
+      <Chart/>
+        <div className="header wow fadeInDown" data-wow-duration="0.9s" data-wow-delay="0.0s">
+          <div className="val">
+            <img src="images/bitcoin.png" alt="" />
+            $45.967
+          </div>
+          <div className="controls">
+            <div className="arrleft gradientbtn">
+                  <i className="fas fa-arrow-left"></i>
+            </div>
+            <div className="rect"></div>
+            <div className="arrright gradientbtn">
+                  <i className="fas fa-arrow-right"></i>
+            </div>
+          </div>
+          <div className="right">
+            <div className="runtime">02:45</div>
+            <div className="time">5 <span>m</span></div>
+            <div className="bx ">
+              <Replay/>
+            </div>
+            <div className="bx active">
+              <Info/>
+            </div>
+          </div>
+        </div>
+        <CardSection>
+            <CardLive colorvalue="red"/>
+            <CardLive colorvalue="green" />
+            <CardLive colorvalue="red" status="active"/>
+            <CardNext/>
+            <CardLater/>
+        </CardSection>
+    </HomeDiv>
+  )
+}
+
+
+
 
 const HomeDiv = styled.div`
     .header{
       display:flex;
       justify-content:space-between;  
-      margin-bottom:50px; 
+      margin-top:50px; 
+      margin-bottom:40px; 
       position:relative;
       .val{
         position:relative;
@@ -149,44 +197,6 @@ const CardSection = styled.div`
 `
 
 
-const Home: React.FC = () => {
-const [shown, setShown] = useState(false)
-  return (
-    <HomeDiv className="container">
-        <div className="header">
-          <div className="val">
-            <img src="images/bitcoin.png" alt="" />
-            $45.967
-          </div>
-          <div className="controls">
-            <div className="arrleft gradientbtn">
-                  <i className="fas fa-arrow-left"></i>
-            </div>
-            <div className="rect"></div>
-            <div className="arrright gradientbtn">
-                  <i className="fas fa-arrow-right"></i>
-            </div>
-          </div>
-          <div className="right">
-            <div className="runtime">02:45</div>
-            <div className="time">5 <span>m</span></div>
-            <div className="bx ">
-              <Replay/>
-            </div>
-            <div className="bx active">
-              <Info/>
-            </div>
-          </div>
-        </div>
-        <CardSection>
-            <CardLive colorvalue="red"/>
-            <CardLive colorvalue="green" />
-            <CardLive colorvalue="red" status="active"/>
-            <CardNext/>
-            <CardLater/>
-        </CardSection>
-    </HomeDiv>
-  )
-}
+
 
 export default Home

@@ -7,7 +7,7 @@ const Pred: React.FC = () => {
   return (
     <Div>
       <div className="container">
-        <div className="left">
+        <div className="left wow fadeInLeft" data-wow-duration="0.9s" data-wow-delay="0.6s">
           <h1>
             Predict <br /> Future
           </h1>
@@ -19,7 +19,7 @@ const Pred: React.FC = () => {
           <div className="gradientbtn">Make Your Prediction</div>
         </div>
 
-        <div className="right">
+        <div className="right wow fadeInRight" data-wow-duration="0.9s" data-wow-delay="0.6s">
           <CardLive status="active" colorvalue="red" comp="home" />
           <CardNext comp="home" />
         </div>
@@ -128,6 +128,21 @@ const Div = styled.div`
       .mycard{
           margin:0 auto 30px !important;
       }
+    }
+  }
+
+  @media screen and (max-width:550px){
+        
+
+    .right{
+        flex-direction:column;
+        padding:0;
+    }
+    .left{
+        padding:0;
+        h1{
+            font-size:26px;
+        }
     }
   }
 `;

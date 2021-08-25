@@ -6,7 +6,8 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 
 const Navbar: React.FC = () => {
-  const [click, setClick] = React.useState(false);
+  const [click, setClick] = useState(false);
+  const [isconnected, setIsconnected] = useState(true);
 
   const handleClick = () => setClick(!click);
   const Close = () => setClick(false);
@@ -22,7 +23,7 @@ const Navbar: React.FC = () => {
   }
 
   return (
-    <Nav>
+    <Nav className="wow fadeInDown" data-wow-duration="0.6s" data-wow-delay="0.5s">
       <div className={click ? "main-container" : ""} onClick={() => Close()} />
       <nav className="navbar " onClick={(e) => e.stopPropagation()}>
         <div className="nav-container container">
@@ -42,6 +43,19 @@ const Navbar: React.FC = () => {
                 className="nav-links"
               >
                 Home
+              </Link>
+            </li>
+            <li className={isActive("chart") ? "nav-item active" : `nav-item`}>
+              <Link
+                exact
+                to="/home"
+                activeClassName="active"
+                className="nav-links"
+                onClick={() => onlinkclick("chart")}
+                
+                className="nav-links"
+              >
+                Chart
               </Link>
             </li>
             <li className={isActive("pred") ? "nav-item active" : `nav-item`}>
@@ -73,7 +87,14 @@ const Navbar: React.FC = () => {
               <i class="fab fa-instagram"></i>
             </li>
             <li className="nav-item connectbtn">
-              <div className="gradientbtn"> <img src="images/metamask.svg" alt="" /> Connect</div>
+              {
+                isconnected ? <div className="gradientbtn" onClick={() => setIsconnected(false)}> <img src="images/metamask.svg" alt="" /> Connect</div> :
+                <div className="isconnected">
+                  <h5>0.34564 <b className="gradtext">BNB</b></h5><div className="gradientbtn"> jb3jk13nb14v57</div>
+                </div>
+              }
+              
+             
             </li>
           </ul>
           <div className="nav-icon" onClick={handleClick}>
@@ -117,6 +138,7 @@ const Nav = styled.nav`
     right: 0;
     background-color: rgba(0, 0, 0, 0.3);
     height: 100%;
+    // transition:all 1s ease
   }
 
   .nav-logo {
@@ -134,6 +156,7 @@ const Nav = styled.nav`
     text-align: center;
     margin-bottom: 0;
     height: 100%;
+    transition: all 0.5s ease;
   }
 
   .nav-links {
@@ -254,6 +277,24 @@ const Nav = styled.nav`
     &:after {
       display: none !important;
     }
+
+    .isconnected{
+      display:flex;
+      align-items:center;
+      h5{
+        margin:0;
+        font-size:16px;
+        margin-right:14px;
+      }
+      .gradientbtn{
+        white-space: nowrap;
+        overflow: hidden;
+        display:block;
+        max-width: 150px;
+        text-overflow: ellipsis;
+  
+      }
+    }
   }
 
   @media screen and (max-width: 960px) {
@@ -287,6 +328,7 @@ const Nav = styled.nav`
       opacity: 1;
       transition: all 0.5s ease;
       z-index: 1;
+      transition: all 0.5s ease;
     }
     .nav-item {
       color: #fff;
@@ -309,7 +351,7 @@ const Nav = styled.nav`
       transform: translate(-100%, 60%);
       font-size: 1.8rem;
       cursor: pointer;
-      color: #ffdd40;
+      color: #EBCF55;
     }
   }
 `;

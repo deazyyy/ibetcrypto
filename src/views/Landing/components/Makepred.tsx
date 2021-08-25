@@ -3,8 +3,8 @@ import styled from 'styled-components'
   
 const MakePred:  React.FC = ()=> {
   return (
-    <Div className="container mt-0">
-        <div className="left">
+    <Div className="container mt-0 wow fadeInDown" >
+        <div className="left wow fadeInLeft" data-wow-duration="0.9s" data-wow-delay="0.8s">
             <h1>Make your Prediciton</h1>
             <p>Before going further with the withdrawal, pleasecheck carefully the target address.Be aware that if you confirm an incorrect address, we won't be able to assist you to recover your assets.</p>
             <div className="gradientbtn">
@@ -12,7 +12,7 @@ const MakePred:  React.FC = ()=> {
             </div>
         </div>
 
-        <div className="right">
+        <div className="right wow fadeInRight" data-wow-duration="0.9s" data-wow-delay="0.8s">
             <h6>Total Bet</h6>
             <h4>0.3456</h4>
             <div className="main">
@@ -170,6 +170,9 @@ const Div = styled.div`
 
 
     @media screen and (max-width:700px){
+        h1{
+            font-size:32px;
+        }
         .main{
             flex-direction:column;
             width:100% !important; 
@@ -179,6 +182,21 @@ const Div = styled.div`
         }
         .right{
             flex-direction:column;
+        }
+      }
+
+      @media screen and (max-width:550px){
+        
+
+        .right{
+            flex-direction:column;
+            padding:0;
+        }
+        .left{
+            padding:0;
+            h1{
+                font-size:32px;
+            }
         }
       }
 

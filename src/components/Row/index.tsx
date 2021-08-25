@@ -13,7 +13,7 @@ interface CardValueProps {
 const Row:  React.FC<CardValueProps> = ({colorvalue, status })=> {
 
   return (
-    <RowOuter className={`${colorvalue} ${status}`}>
+    <RowOuter className={`${colorvalue} ${status} wow fadeInDown`}   data-wow-duration="0.5s" data-wow-delay="0.4s">
         <div className="left">
             <div>
                 <h5>Basketball</h5>
@@ -240,6 +240,28 @@ const RowOuter = styled.div`
             padding:10px 0;
         } 
     }
+
+
+    @media screen and (max-width:550px){
+        
+
+        .right{
+            flex-direction:column;
+            padding:0;
+            text-align:center;
+            .versus {
+                margin:20px 0;
+                width:100%;
+            }
+            .namebx{
+                width:100%;
+                
+                h5{
+                    text-align:center;
+                }
+            }
+        }
+      }
        
 `
 

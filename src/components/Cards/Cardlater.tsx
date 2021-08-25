@@ -4,7 +4,7 @@ import Later from '../../assets/Icons/Later'
   
 const CardLater:  React.FC = ()=> {
   return (
-    <CardDiv  className="mycard">
+    <CardDiv  className="mycard wow fadeInDown" data-wow-duration="0.9s" data-wow-delay="0.8s" >
         <header>
             <div><Later/>Later</div>
             #456

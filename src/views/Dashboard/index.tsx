@@ -307,6 +307,24 @@ const DashDiv = styled.div`
       }
     }
   }
+
+
+  @media screen and (max-width:1400px){
+    header{
+      flex-direction:column;
+      .left{
+        flex-flow:wrap;
+        justify-content: center;
+        li{
+          margin-bottom:24px;
+        }
+      }
+      .right{
+        margin-top:30px;
+        margin-bottom:20px;
+      }
+    }
+  }
 `;
 
 const CardSection = styled.div`

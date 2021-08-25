@@ -8,7 +8,7 @@ const Betting: React.FC = () => {
   }
 
   return (
-    <BetDiv>
+    <BetDiv className="wow fadeInDown" data-wow-duration="0.5s" data-wow-delay="0.8s">
       <div className="left">
         <div className="namebx">
           <img src="images/usr.png" alt="" />
@@ -213,6 +213,51 @@ const BetDiv = styled.div`
       }
     }
   }
+
+
+
+  
+  @media screen and (max-width:1200px){
+    flex-direction:column;
+    .left{
+      width:100%;
+      border-right: 0;
+      border-bottom: 1px dashed rgba(255,255,255,0.2);
+    }
+    .right{
+      width:60%;
+      margin:auto;
+    }
+  }
+
+
+  @media screen and (max-width:768px){
+    .left{
+      padding: 20px  10% 40px;
+      flex-direction: column;
+
+      .center{
+        order:1;
+        width:100%;
+        margin: 19px auto;
+        .versus{
+          margin-top:20px
+        }
+      }
+      .namebx{
+        order:2;
+        img{
+          height:120px
+        }
+      }
+      
+    }
+    .right{
+      padding: 40px 10%;
+      width: 100%;
+    }
+  }
+
 `;
 
 const CardSection = styled.div`

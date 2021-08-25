@@ -12,7 +12,7 @@ interface CardValueProps {
 const CardNext:  React.FC<CardValueProps> = ({comp})=> {
 
   return (
-    <CardDiv className={`${comp} mycard`}>
+    <CardDiv className={`${comp} mycard mycard wow fadeInDown`} data-wow-duration="0.9s" data-wow-delay="0.8s">
         <header>
             <div><Next/>Next</div>
             #456
