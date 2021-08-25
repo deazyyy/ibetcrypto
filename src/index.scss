@@ -30,6 +30,7 @@ code {
   align-items: center;
   border-radius: 6px;
   justify-content: center;
+  transition: all 0.3s ease;
   &::before {
     content: "";
     position:absolute;
@@ -42,6 +43,10 @@ code {
     transition: width 0.7s ease, background-color 0.5s ease;
     z-index: -1;
     border-radius: 6px;
+  }
+  cursor: pointer;
+  &:hover{
+    transform: scale(1.05);
   }
 }
 
