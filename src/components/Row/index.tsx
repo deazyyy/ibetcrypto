@@ -18,7 +18,7 @@ const Row:  React.FC<CardValueProps> = ({colorvalue, status })=> {
             <div>
                 <h5></h5>
                 <div className="time">
-                    12.34.23
+                    00:12:10:05
                 </div>
             </div>
             <div>
@@ -28,12 +28,12 @@ const Row:  React.FC<CardValueProps> = ({colorvalue, status })=> {
         <div className="center">
             <span>Total Bet</span>
             <b className="val">0.343234</b>
-            <b className="grad">BNB</b>
+            <b className="grad">BTC</b>
         </div>
 
         <div className="right">
             <div className="namebx rightrow">
-                <h5>Name Surname</h5>
+                <h5>Arizona Cardinals/h5>
                 {colorvalue == "green"?<div className="amt">3.456</div>:``}
             </div>
             <div className="versus rightrow">
@@ -46,7 +46,7 @@ const Row:  React.FC<CardValueProps> = ({colorvalue, status })=> {
                 </div>
             </div>
             <div className="namebx namebxlst rightrow">
-                <h5>Name Surname</h5>
+                <h5>Baltimore Ravens</h5>
             </div>
         </div>
     </RowOuter>

@@ -10,7 +10,6 @@ const Partners:  React.FC = ()=> {
         <h3>Our Partners</h3>
         <div className="imgOuter">
             <img src="images/partners.png" alt="" />
-            <img src="images/partners.png" alt="" />
         </div>
     </div>
     </Div>
