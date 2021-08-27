@@ -18,13 +18,13 @@ const MakePred:  React.FC = ()=> {
             <div className="main">
                 <div className="namebx">
                     <img src="images/usr.png" alt="" />
-                    <h5>Name Surname</h5>
+                    <h5>Jamie Campbell</h5>
                     <div className="times">1.5X</div>
                 </div>
                 <div className="versus">VS</div>
                 <div className="namebx">
                     <img src="images/usr2.png" alt="" />
-                    <h5>Name Surname</h5>
+                    <h5>Chris Leben</h5>
                     <div className="times">1.5X</div>
                 </div>
             </div>
