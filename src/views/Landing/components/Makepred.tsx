@@ -5,7 +5,7 @@ const MakePred:  React.FC = ()=> {
   return (
     <Div className="container mt-0 wow fadeInDown" >
         <div className="left wow fadeInLeft" data-wow-duration="0.9s" data-wow-delay="0.8s">
-            <h1>Make your Prediciton</h1>
+            <h1>Crypto In. Crypto out.</h1>
             <p>Before going further with the withdrawal, pleasecheck carefully the target address.Be aware that if you confirm an incorrect address, we won't be able to assist you to recover your assets.</p>
             <div className="gradientbtn">
                 Make Your Prediction
