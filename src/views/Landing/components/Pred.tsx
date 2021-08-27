@@ -9,12 +9,10 @@ const Pred: React.FC = () => {
       <div className="container">
         <div className="left wow fadeInLeft" data-wow-duration="0.9s" data-wow-delay="0.6s">
           <h1>
-            Predict <br /> Future
+          We bet crypto do you?  <br /> 24/7 Crypto Prediction Pools.
           </h1>
           <p>
-            Before going further with the withdrawal, pleasecheck carefully the
-            target address.Be aware that if you confirm an incorrect address, we
-            won't be able to assist you to recover your assets.
+          What’s better then betting in crypto and getting paid in crypto??? Nothing.
           </p>
           <div className="gradientbtn">Make Your Prediction</div>
         </div>

@@ -5,8 +5,8 @@ const MakePred:  React.FC = ()=> {
   return (
     <Div className="container mt-0 wow fadeInDown" >
         <div className="left wow fadeInLeft" data-wow-duration="0.9s" data-wow-delay="0.8s">
-            <h1>Crypto In. Crypto out.</h1>
-            <p>Before going further with the withdrawal, pleasecheck carefully the target address.Be aware that if you confirm an incorrect address, we won't be able to assist you to recover your assets.</p>
+            <h1>Crypto In. Crypto out. 24/7 never closes</h1>
+            <p>The world’s first ever blockchain based live prediction pools driven by the binance smart chain has arrived. All the sports and crypto live prediction pools you can handle. Connect your wallet and call the shots. Your in control with the lowest transaction fees in the industry at 3%! Go head to head and play against your friends with crypto only at ibetcrypto.io.</p>
             <div className="gradientbtn">
                 Make Your Prediction
             </div>

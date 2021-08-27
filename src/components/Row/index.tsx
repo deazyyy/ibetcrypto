@@ -16,7 +16,7 @@ const Row:  React.FC<CardValueProps> = ({colorvalue, status })=> {
     <RowOuter className={`${colorvalue} ${status} wow fadeInDown`}   data-wow-duration="0.5s" data-wow-delay="0.4s">
         <div className="left">
             <div>
-                <h5>Basketball</h5>
+                <h5></h5>
                 <div className="time">
                     12.34.23
                 </div>

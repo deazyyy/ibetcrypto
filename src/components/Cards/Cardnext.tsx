@@ -33,7 +33,7 @@ const CardNext: React.FC<CardValueProps> = ({ comp }) => {
           <div className="top">
             <h3>Prize Pool</h3>
             <div className="val">
-              $425.554 <span>BNB</span>
+              $42.554,21 <span>BTC</span>
             </div>
           </div>
           <div className="up" >

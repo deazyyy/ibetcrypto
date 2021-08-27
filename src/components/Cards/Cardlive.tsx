@@ -37,19 +37,19 @@ const CardLive:  React.FC<CardValueProps> = ({colorvalue, status ,comp})=> {
                     <h5>1.37x Payout</h5>
                     <div className="price">
                         <h4>
-                            $436.554
+                            $43.644,31
                         </h4>
-                        <span>$0.344</span>
+                        <span>3.44%</span>
                     </div>
                 </div>
                 <div className="infos">
                     <div className="row">
                         Locked Price:
-                        <b>$543.3</b>
+                        <b>$54.331,21</b>
                     </div>
                     <div className="row">
                         Locked Price:
-                        <b>$543.3</b>
+                        <b>$54.331,21</b>
                     </div>
                 </div>
             </div>

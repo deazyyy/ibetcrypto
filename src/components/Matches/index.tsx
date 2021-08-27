@@ -8,7 +8,7 @@ import Row from "../Row";
 const Bet: React.FC = () => {
   return (
     <div className="rowOuter">
-        <h3 className="heading">Other Matches</h3>
+        <h3 className="heading">All Sports</h3>
         <Row status="active" />
         <Row colorvalue="green" />
         <Row />
