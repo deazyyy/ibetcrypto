@@ -33,7 +33,7 @@ const Row:  React.FC<CardValueProps> = ({colorvalue, status })=> {
 
         <div className="right">
             <div className="namebx rightrow">
-                <h5>Arizona Cardinals/h5>
+                <h5>Arizona Cardinals</h5>
                 {colorvalue == "green"?<div className="amt">3.456</div>:``}
             </div>
             <div className="versus rightrow">
