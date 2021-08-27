@@ -12,7 +12,7 @@ const Betting: React.FC = () => {
       <div className="left">
         <div className="namebx">
           <img src="images/usr.png" alt="" />
-          <h4>Name Surname</h4>
+          <h4>Jamie Campbell</h4>
           <button
             onClick={() => setActivenm("btn1")}
             className={isActive("btn1") ? "gradientbtn active" : `gradientbtn`}
@@ -31,7 +31,7 @@ const Betting: React.FC = () => {
         </div>
         <div className="namebx">
           <img src="images/usr2.png" alt="" />
-          <h4>Name Surname</h4>
+          <h4>Chris Leben</h4>
           <button
             onClick={() => setActivenm("btn2")}
             className={isActive("btn2") ? "gradientbtn active" : `gradientbtn`}
