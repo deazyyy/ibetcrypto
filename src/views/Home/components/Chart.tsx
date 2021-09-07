@@ -2,88 +2,135 @@
 import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 import axios from "axios";
-// const convertDate = timestamp => moment(new Date(timestamp * 1000)).format('MMM YY\'');
-//   const convertValue = (value) =>  `${Math.floor(value/10e2)}M`;
-// import {Line, ComposedChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from "recharts";
+import Chart from 'react-apexcharts'
 
-const Chart: React.FC = () => {
-  //   const [data, setShown] = useState([])
 
-  //   useEffect(() => {
-  //     axios
-  //     .get(
-  //       "https://min-api.cryptocompare.com/data/histoday?fsym=BTC&tsym=USD&limit=50&aggregate=3&e=Kraken"
-  //     )
-  //     .then(res => {
-  //       setShown(res.data["Data"])
-  //     })
-  //     .catch(error => {
-  //       console.log(error);
-  //     })
-  //   });
-  // return (
-  //   <ComposedChart width={800} height={300} data={data} margin={{top: 25, right: 30, left: 20, bottom: 5}}>
-  //     <defs>
-  //       <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
-  //         <stop offset="5%" stopColor="#129a74" stopOpacity={0.1}/>
-  //         <stop offset="95%" stopColor="#FFFFFF" stopOpacity={0.1}/>
-  //       </linearGradient>
-  //     </defs>
-  //     {/* <XAxis dataKey="time" tickFormatter={convertDate} />
-  //     <YAxis tickFormatter={convertValue}/> */}
-  //     <XAxis dataKey="time"  />
-  //     <YAxis />
-  //     <Tooltip/>
-  //     <CartesianGrid vertical={false} stroke="#DDD" />
+const Chartmain: React.FC = () => {
 
-  //     <Line type="monotone" unit="M" strokeLinecap="round" strokeWidth={2}
-  //       style={{ strokeDasharray: `40% 60%` }}
-  //       dataKey="close"
-  //       stroke="#006991"
-  //       dot={false}
-  //       legendType="none"
-  //     />
-  //     <Area type="monotone" dataKey="close" stroke={false} strokeWidth={2} fillOpacity={1} fill="url(#colorUv)" />
-  //   </ComposedChart>
-  // );
-
-  // const script = document.createElement("script");
-
-  // script.src = "https://s3.tradingview.com/tv.js";
-  // script.async = true;
-
-  // document.body.appendChild(script);
-
- useEffect(() => {
-  new TradingView.MediumWidget({
-    symbols: [
-      ["Apple", "AAPL"],
-      ["Microsoft", "MSFT"],
-    ],
-    chartOnly: false,
-    width: "100%",
-    height: "700px",
-    locale: "in",
-    colorTheme: "dark",
-    gridLineColor: "rgba(240, 243, 250, 0)",
-    trendLineColor: "rgba(106, 220, 78, 0.6)",
-    fontColor: "#787B86",
-    underLineColor: "rgba(106, 220, 78, 0.09)",
-    underLineBottomColor: "rgba(0, 255, 0, 0.28)",
-    isTransparent: false,
-    autosize: true,
-    showFloatingTooltip: false,
-    container_id: "tradingview_f2122",
-  });
-
- }, [])
+ const options= {
+  xaxis: {
+    categories: ["00:00","01:00","02:00", "03:00","04:00","05:00","06:00","07:00","08:00","09:00","10:00","11:00","12:00"],
+    lines: {
+      show: true
+    },
+    labels: {
+      style: {
+          colors: "#666666",
+          fontSize: '12px',
+      },
+    },
+    axisBorder: {
+        show: false,
+        offsetY: 10
+    },
+    
+  },
+  tooltip: {
+    enabled: false,
+  },
+  yaxis: {
+    opposite: true,
+    labels: {
+      style: {
+          colors: "#666666",
+          fontSize: '12px',
+      },
+    },
+  },
+  stroke: {
+    curve: 'smooth',
+    width: 2,
+  },
+  dataLabels: {
+    enabled: false,
+  },
+  grid: {
+    borderColor: '#111311',
+    strokeDashArray: 5,
+    xaxis: {
+      lines: {
+        show: true
+      }
+    }
+  },
+  colors: ['#69DC4E',],
+  fill: {
+    type: "gradient",
+    gradient: {
+      shadeIntensity: 0,
+      opacityFrom:0.5,
+      opacityTo: 0,
+      stops: [0, 90, 100]
+    }
+  },
+}
+const series= [{
+  name: 'series-1',
+  data: [30, 40, 25, 50, 49, 21,10, 70, 49,0, 21, 70, 51]
+}]
   return (
-    <div class="tradingview-widget-container wow fadeInDown"
-    data-wow-duration="0.6s"
-    data-wow-delay="0.4s">
-      <div id="tradingview_f2122"></div>
-    </div>
+    <ChartOuter>
+      <div className="pricelive">
+        <h4>
+          045.234
+          <small>BNB</small>
+          <span className="up">
+          <svg width="8" height="7" viewBox="0 0 8 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path opacity="0.3" d="M3.13397 0.500001C3.51887 -0.166666 4.48113 -0.166667 4.86603 0.5L7.4641 5C7.849 5.66667 7.36788 6.5 6.59808 6.5H1.40192C0.632124 6.5 0.150998 5.66667 0.535898 5L3.13397 0.500001Z" fill="#69DC4E"/>
+          </svg>
+            $0.344
+            </span>
+        </h4>
+        <h6>$44.56</h6>
+      </div>
+      <Chart options={options} series={series} type="area" width="100%" height={600}/>
+    </ChartOuter>
   );
 };
 
-export default Chart;
+
+const ChartOuter = styled.div`
+.pricelive{
+  h4{
+    font-weight:700;
+    small{
+      margin-left:6px;
+      font-weight:700;
+    }
+  }
+  h6{
+    color:#808080
+  }
+  .up{
+    font-weight:500;
+    font-size:16px;
+    background:#10210C;
+    color: #69DC4E;
+    border-radius: 7px;
+    padding:7px 14px;
+    margin-left:10px;
+    svg{
+      transform:scale(1.5);
+      margin-right:8px;
+      margin-bottom:2px;
+    }
+  }
+}
+position:relative;
+&::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  right: 0%;
+  bottom: 0px;
+  background: radial-gradient(50% 50% at 50% 50%, #69DC4E 0%, rgba(105, 220, 78, 0) 100%);
+  opacity: 0.11;
+  filter: blur(200px);
+  z-index: -1;
+}
+`
+
+
+
+export default Chartmain;

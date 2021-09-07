@@ -6,7 +6,7 @@ import CardNext from "../../components/Cards/Cardnext";
 import CardLater from "../../components/Cards/Cardlater";
 import Info from "../../assets/Icons/Info";
 import Replay from "../../assets/Icons/Replay";
-import Chart from "./components/Chart";
+import Chartmain from "./components/Chart";
 import Slider from "react-slick";
 
 const Home: React.FC = () => {
@@ -67,7 +67,7 @@ const Home: React.FC = () => {
   }
   return (
     <HomeDiv className="container">
-      <Chart />
+      <Chartmain />
       <div
         className="header wow fadeInDown"
         data-wow-duration="0.9s"
