@@ -6,10 +6,13 @@ import Chart from 'react-apexcharts'
 
 
 const Chartmain: React.FC = () => {
-
+  const [xaxis, setXaxis] = useState([]);
+  const [yaxis, setYaxis] = useState([]);
+  const [btcprice, setBtcprice] = useState(0);
+  const [btcchange, setBtcchange] = useState(0);
  const options= {
   xaxis: {
-    categories: ["00:00","01:00","02:00", "03:00","04:00","05:00","06:00","07:00","08:00","09:00","10:00","11:00","12:00"],
+    categories: xaxis,
     lines: {
       show: true
     },
@@ -66,22 +69,62 @@ const Chartmain: React.FC = () => {
 }
 const series= [{
   name: 'series-1',
-  data: [30, 40, 25, 50, 49, 21,10, 70, 49,0, 21, 70, 51]
+  data: yaxis
 }]
+
+
+
+useEffect(() => {
+  let time = [];
+  let price = [];
+  axios.get('https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=1&interval=hourly')
+  .then(function (response) {
+    // handle success
+    console.log(response);
+    response.data.prices.map((data) => {
+      const milliseconds = data[0]  // 1575909015000
+      const dateObject = new Date(milliseconds)
+      time.push(dateObject.toLocaleString('en-US', { hour: 'numeric',minute: 'numeric', hour12: false }));
+      price.push(data[1].toFixed(2))
+    })
+    setXaxis(time);
+    setYaxis(price)
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  })
+
+
+  axios.get('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&include_24hr_change=true')
+  .then(function (response) {
+    // handle success
+    console.log(response);
+    
+    setBtcprice(response.data.bitcoin.usd)
+    setBtcchange(response.data.bitcoin.usd_24h_change.toFixed(2))
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  })
+  
+}, [])
+
   return (
     <ChartOuter>
       <div className="pricelive">
         <h4>
-          045.234
-          <small>BNB</small>
-          <span className="up">
-          <svg width="8" height="7" viewBox="0 0 8 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path opacity="0.3" d="M3.13397 0.500001C3.51887 -0.166666 4.48113 -0.166667 4.86603 0.5L7.4641 5C7.849 5.66667 7.36788 6.5 6.59808 6.5H1.40192C0.632124 6.5 0.150998 5.66667 0.535898 5L3.13397 0.500001Z" fill="#69DC4E"/>
-          </svg>
-            $0.344
-            </span>
+          1
+          <small>BTC</small>
+            <span className={btcchange>=0 ? "up" :"down"}>
+              <svg width="8" height="7" viewBox="0 0 8 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path opacity="0.3" d="M3.13397 0.500001C3.51887 -0.166666 4.48113 -0.166667 4.86603 0.5L7.4641 5C7.849 5.66667 7.36788 6.5 6.59808 6.5H1.40192C0.632124 6.5 0.150998 5.66667 0.535898 5L3.13397 0.500001Z" fill={btcchange>=0 ? "#69DC4E" :"#F05E47"}/>
+              </svg>
+              {btcchange}%
+            </span> 
         </h4>
-        <h6>$44.56</h6>
+        <h6>${btcprice}</h6>
       </div>
       <Chart options={options} series={series} type="area" width="100%" height={600}/>
     </ChartOuter>
@@ -111,6 +154,24 @@ const ChartOuter = styled.div`
     margin-left:10px;
     svg{
       transform:scale(1.5);
+      margin-right:8px;
+      margin-bottom:2px;
+      
+    }
+    path{
+      fill:#69DC4E !important
+    }
+  }
+  .down{
+    font-weight:500;
+    font-size:16px;
+    background:#4B3430;
+    color: #F05E47;
+    border-radius: 7px;
+    padding:7px 14px;
+    margin-left:10px;
+    svg{
+      transform:scale(1.5)rotate(180deg);
       margin-right:8px;
       margin-bottom:2px;
     }
