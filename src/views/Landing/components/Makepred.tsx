@@ -4,6 +4,11 @@ import styled from 'styled-components'
 const MakePred:  React.FC = ()=> {
   return (
     <Div className="container mt-0 wow fadeInDown" >
+        <video autoPlay muted loop id="myVideo">
+            <source src="images/ibetbg.mp4" type="video/mp4" />
+            Your browser does not support HTML5 video.
+        </video>
+        <div className="bgOvverlay" />
         <div className="left wow fadeInLeft" data-wow-duration="0.9s" data-wow-delay="0.8s">
             <h1>Crypto In. Crypto out. 24/7 never closes</h1>
             <p>The world’s first ever blockchain based live prediction pools driven by the binance smart chain has arrived. All the sports and crypto live prediction pools you can handle. Connect your wallet and call the shots. Your in control with the lowest transaction fees in the industry at 3%! Go head to head and play against your friends with crypto only at ibetcrypto.io.</p>
@@ -34,8 +39,26 @@ const MakePred:  React.FC = ()=> {
 }
   
 const Div = styled.div`
+#myVideo{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    z-index:-3
+}
+.bgOvverlay{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background:rgba(0,0,0,0.75);
+    min-width: 100%; 
+    min-height: 100%;
+    z-index:-2
+}
     &.container{
         padding: 0 12%;
+        margin-bottom: 0;
         &::before {
             content: "";
             position:absolute;
@@ -54,6 +77,7 @@ const Div = styled.div`
     align-items:center;
     margin-top::-80px;
     min-height:calc( 100vh - 160px );
+   
     .right{
         text-align:center;
         position:relative;
