@@ -58,7 +58,7 @@ const Div = styled.div`
 }
     &.container{
         padding: 0 12%;
-        margin-bottom: 0;
+        margin-bottom: 0 !important;
         &::before {
             content: "";
             position:absolute;
