@@ -10,6 +10,10 @@ const Chartmain: React.FC = () => {
   const [btcprice, setBtcprice] = useState(0);
   const [btcchange, setBtcchange] = useState(0);
   const options = {
+    chart: {
+      width: "100%",
+      height: 600,
+    },
     xaxis: {
       categories: xaxis,
       lines: {
@@ -64,6 +68,40 @@ const Chartmain: React.FC = () => {
         stops: [0, 90, 100],
       },
     },
+    responsive: [
+      {
+        breakpoint: 1000,
+        options: {
+          chart: {
+            height: 480,
+          },
+          xaxis: {
+            labels: {
+              show: false,
+            },
+            axisTicks: {
+              show: false,
+            },
+          },
+        }
+      },
+      {
+        breakpoint: 600,
+        options: {
+          chart: {
+            height: 400,
+          },
+          xaxis: {
+            labels: {
+              show: false,
+            },
+            axisTicks: {
+              show: false,
+            },
+          },
+        }
+      }
+    ]
   };
   const series = [
     {
@@ -71,6 +109,8 @@ const Chartmain: React.FC = () => {
       data: yaxis,
     },
   ];
+
+
 
   useEffect(() => {
     let time = [];
@@ -159,8 +199,6 @@ const Chartmain: React.FC = () => {
         options={options}
         series={series}
         type="area"
-        width="100%"
-        height={600}
       />
     </ChartOuter>
   );
@@ -168,6 +206,7 @@ const Chartmain: React.FC = () => {
 
 const ChartOuter = styled.div`
   .pricelive {
+    // position:absolute;
     h4 {
       font-weight: 700;
       small {
